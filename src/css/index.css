@@ -1,0 +1,197 @@
+[class^="i-"],
+[class*="i-"] {}
+
+:root {
+    font-family: Barlow;
+    font-size: 0.5cm;
+    line-height: 1.25;
+    font-weight: 400;
+
+    --s: #f9dbfb;
+    --sa: #ff60c7;
+    --san: #ff4294ff;
+    --v: #dbf9ff;
+    --va: #16a3e9;
+    --val: #0089e3ff;
+
+    --text: #161027;
+
+    --bg: #fff;
+
+    color: var(--text);
+    background-color: var(--bg);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --s: #440831;
+        --sa: #ff4294ff;
+        --san: #ff60b2ff;
+        --v: #002b49;
+        --va: #0089e3ff;
+        --val: #16a3e9ff;
+
+        --text: #eaeafd;
+
+        --bg: #161027;
+    }
+}
+
+.santi {
+    --c: var(--s);
+    --ce: var(--sa);
+    --cez: var(--san);
+}
+
+.valen {
+    --c: var(--v);
+    --ce: var(--va);
+    --cez: var(--val);
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    gap: 5mm;
+    padding: 5mm;
+    max-width: 210mm;
+    margin: 0 auto;
+}
+
+@media print {
+    .page {
+        margin: 0 auto;
+        height: 297mm;
+    }
+}
+
+@media not print {
+    .on-print {
+        display: none;
+    }
+
+    .page:not(:first-child) {
+        margin-top: -5mm;
+    }
+}
+
+.heading {
+    display: grid;
+    grid-template:
+        "pic name" min-content
+        "desc desc" 1fr
+        / 6cm auto;
+    gap: 5mm;
+}
+
+.heading .name {
+    background-image: url("/icecold.png");
+    background-size: cover;
+    background-blend-mode: overlay;
+    grid-area: name;
+}
+
+.heading .pic {
+    grid-area: pic;
+    aspect-ratio: 1 / 1;
+}
+
+.heading .desc {
+    grid-area: desc;
+}
+
+.page .row {
+    display: flex;
+    gap: 5mm;
+}
+
+@media screen and (max-width: 210mm) {
+    .page .row {
+        flex-direction: column;
+    }
+
+    .heading {
+        grid-template:
+            "pic name" auto
+            "desc desc" auto
+            / 3cm auto;
+    }
+
+    .heading .name {
+        font-size: 0.8rem;
+    }
+
+    .heading .pic {
+        grid-area: pic;
+        height: 3cm;
+    }
+}
+
+.adwaita {
+    background-image: url("/adwaita-d.jpg");
+    background-size: cover;
+}
+
+.cefr {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cefr h1 {
+    font-size: 2em;
+    margin-top: -.2em;
+}
+
+.english h2 {
+    font-weight: ;
+}
+
+.english .ranks {
+    display: flex;
+    margin-bottom: .25em;
+}
+
+.english .ranks span {
+    text-align: center;
+    border-radius: .5em;
+    padding: .25em 0;
+    flex-grow: 1;
+}
+
+.english .ranks span.active {
+    background-color: var(--cez);
+}
+
+.english .score {
+    display: flex;
+    justify-content: space-between;
+}
+
+.english .score span:first-child,
+.english .score span:last-child {
+    font-size: .8em;
+}
+
+ul {
+    list-style: none;
+    margin-left: 5mm;
+}
+
+ul li::before {
+    content: "\2022";
+    color: var(--cez);
+    font-weight: bold;
+    display: inline-block;
+    width: 5mm;
+    margin-left: -5mm;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

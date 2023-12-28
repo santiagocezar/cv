@@ -1,0 +1,30 @@
+{
+  "name": "websume",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@iconify-json/ic": "^1.1.9",
+    "@iconify-json/simple-icons": "^1.1.20",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "@unocss/preset-icons": "^0.45.5",
+    "@unocss/preset-mini": "^0.44.2",
+    "@unocss/preset-uno": "^0.44.7",
+    "@unocss/preset-web-fonts": "^0.44.7",
+    "@unocss/vite": "^0.44.2",
+    "@vitejs/plugin-react": "^2.0.0",
+    "typescript": "^4.6.4",
+    "unplugin-icons": "^0.14.8",
+    "vite": "^3.0.0"
+  }
+}
