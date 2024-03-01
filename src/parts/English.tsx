@@ -5,26 +5,28 @@ export const English = () => (
     <Block className="santi">
         <div className="flex justify-between">
             <TextTitle>CEFR English Level</TextTitle>
-            <h1 className="text-2em mt--.2em">B1</h1>
         </div>
+        <h1 className="text-2em mt--.2em">B2</h1>
         <h2 className="text-$cez font-bold">Cambridge English Scale</h2>
         <table>
-            <tr>
-                <td className="font-bold pr-.5em">Reading </td>
-                <td>149</td>
-            </tr>
-            <tr>
-                <td className="font-bold pr-.5em">Writing </td>
-                <td>150</td>
-            </tr>
-            <tr>
-                <td className="font-bold pr-.5em">Listening </td>
-                <td>147</td>
-            </tr>
-            <tr>
-                <td className="font-bold pr-.5em">Speaking </td>
-                <td>146</td>
-            </tr>
+            <tbody>
+                <tr>
+                    <td className="font-bold pr-.5em">Reading </td>
+                    <td>170</td>
+                </tr>
+                <tr>
+                    <td className="font-bold pr-.5em">Writing </td>
+                    <td>170</td>
+                </tr>
+                <tr>
+                    <td className="font-bold pr-.5em">Listening </td>
+                    <td>170</td>
+                </tr>
+                <tr>
+                    <td className="font-bold pr-.5em">Speaking </td>
+                    <td>163</td>
+                </tr>
+            </tbody>
         </table>
     </Block>
 );

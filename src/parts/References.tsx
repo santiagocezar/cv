@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Block } from "../components/Block";
 import { ExperienceItem } from "../components/ExperienceItem";
+import _ from "../strings";
 
 const NUMBERS = {
     eze: undefined as string | undefined,

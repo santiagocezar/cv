@@ -1,0 +1,74 @@
+---
+import Sidebar from "../components/Sidebar.astro";
+import Experience from "../parts/Experience.astro";
+import Projects from "../parts/Projects.astro";
+import Tech from "../parts/Tech.astro";
+import English from "../parts/English.astro";
+import SoftSkills from "../parts/SoftSkills.astro";
+import { OpenSource } from "../parts/OpenSource";
+import { Block } from "../components/Block";
+import { References } from "../parts/References";
+import {Root} from "../main.tsx"
+
+import "../css/cssreset.css";
+import "../css/index.css";
+import "uno.css";
+---
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curriculum</title>
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&family=Poppins:wght@300;400;700;900&display=swap"
+    rel="stylesheet" /> -->
+
+</head>
+
+<body>
+    <div class="page">
+        <Sidebar>
+            <main>
+                <Experience />
+                <Projects />
+                <div class="dual">
+                    <Tech />
+                    <SoftSkills />
+                    <English />
+                </div>
+            </main>
+            <!--<div class="row">
+                <div class="flex flex-col flex-basis-0 grow-4 gap-5mm">
+                    <Social />
+                    {/* <Block class="santi bg-$text adwaita font-bold text-white">
+                        5+ years of experience in Linux-based OS
+                    </Block> */}
+                </div>
+                <div class="flex flex-col flex-basis-0 grow-4 gap-5mm">
+                </div>
+            </div>-->
+        </Sidebar>
+    </div>
+</body>
+
+</html>
+
+<style>
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 5mm;
+}
+.dual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5mm;
+}
+.dual :global(:first-child) {
+    grid-row: span 2;
+}
+</style>

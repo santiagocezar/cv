@@ -1,5 +1,6 @@
 import { Block } from "../components/Block";
 import { ExperienceItem } from "../components/ExperienceItem";
+import _ from "../strings";
 
 export const Experience = () => (
     <Block className="santi flex-basis-0 grow-3" title={_({ english: "Experience", spanish: "Experiencia" })}>

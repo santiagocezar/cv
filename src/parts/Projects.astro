@@ -1,0 +1,25 @@
+---
+import HistoricItem from "../components/HistoricItem.astro";
+import Block from "../components/Block.astro";
+import _ from "../strings";
+---
+<Block class="santi side-side" title="Proyectos">
+    <HistoricItem title="Score" link="https://score.scez.ar/">
+        Base para crear contadores de puntos para juegos de mesa.
+    </HistoricItem>
+    <HistoricItem
+        title={_({ english: "KDE Plasma 5.16 Wallpaper Contest Winner", spanish: "Fondo por defecto para KDE 5.16" })}
+        link="https://ahi.ar/fondo516"
+    >
+        {_({
+            english: "Made using open source software. Was used in million of computers around the world. For more info:",
+            spanish: "Ganador del concurso internacional para el lanzamiento de Plasma 5.16 de junio 2019",
+        })}
+    </HistoricItem>
+    <HistoricItem title="ahi.ar" link="https://ahi.ar/santi">
+        Acortador de links personal, con un chatbot como interfaz.
+    </HistoricItem>
+    <HistoricItem title="Gengir" link="https://ahi.ar/gengir">
+        Genera pistas de autocompletado para trabajar con GTK en Python.
+    </HistoricItem>
+</Block>

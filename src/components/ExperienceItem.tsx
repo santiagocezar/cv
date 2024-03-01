@@ -5,7 +5,6 @@ function displayLink(link: string) {
         return link;
     }
     if (link.match(/^https?:\/\//)) return link.split("//", 2)[1];
-    link;
 }
 
 export const ExperienceItem: FCC<{

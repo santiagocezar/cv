@@ -1,3 +1,5 @@
+import _ from "../strings";
+
 export const Heading = () => (
     <div className="heading">
         <div className="pic bg-$v flex justify-center rd-3mm overflow-hidden">

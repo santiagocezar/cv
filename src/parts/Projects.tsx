@@ -2,7 +2,7 @@ import { Block } from "../components/Block";
 import { ExperienceItem } from "../components/ExperienceItem";
 
 export const Projects = () => (
-    <Block className="valen" title="Personal Projects">
+    <Block className="santi" title="Personal Projects">
         <ExperienceItem title="Score" link="https://score.scez.ar/">
             Extensible framework that allows to easily make score counters for
             different styles of board games. Try it in:

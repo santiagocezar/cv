@@ -1,17 +1,14 @@
-[class^="i-"],
-[class*="i-"] {}
-
 :root {
     font-family: Barlow;
-    font-size: 0.5cm;
+    font-size: 0.4cm;
     line-height: 1.25;
     font-weight: 400;
 
     --s: #f9dbfb;
-    --sa: #ff60c7;
+    --sa: #fba5d7;
     --san: #ff4294ff;
     --v: #dbf9ff;
-    --va: #16a3e9;
+    --va: #83ccf4;
     --val: #0089e3ff;
 
     --text: #161027;
@@ -25,13 +22,18 @@
     text-rendering: optimizeLegibility;
 }
 
+h1, h2, h3, h4, h5, h6, .font-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
 @media (prefers-color-scheme: dark) {
     :root {
         --s: #440831;
         --sa: #ff4294ff;
         --san: #ff60b2ff;
         --v: #002b49;
-        --va: #0089e3ff;
+        --va: #095b89;
         --val: #16a3e9ff;
 
         --text: #eaeafd;
@@ -58,14 +60,8 @@
     gap: 5mm;
     padding: 5mm;
     max-width: 210mm;
+    height: 297mm;
     margin: 0 auto;
-}
-
-@media print {
-    .page {
-        margin: 0 auto;
-        height: 297mm;
-    }
 }
 
 @media not print {
@@ -78,30 +74,12 @@
     }
 }
 
-.heading {
-    display: grid;
-    grid-template:
-        "pic name" min-content
-        "desc desc" 1fr
-        / 6cm auto;
-    gap: 5mm;
+@media print {
+    astro-dev-toolbar {
+        display: none;
+    }
 }
 
-.heading .name {
-    background-image: url("/icecold.png");
-    background-size: cover;
-    background-blend-mode: overlay;
-    grid-area: name;
-}
-
-.heading .pic {
-    grid-area: pic;
-    aspect-ratio: 1 / 1;
-}
-
-.heading .desc {
-    grid-area: desc;
-}
 
 .page .row {
     display: flex;
@@ -128,6 +106,13 @@
         grid-area: pic;
         height: 3cm;
     }
+}
+
+.side-side {
+    display: grid;
+    grid-template-columns: 4cm 1fr;
+    gap: 3mm 3mm;
+    background-color: var(--c);
 }
 
 .adwaita {
