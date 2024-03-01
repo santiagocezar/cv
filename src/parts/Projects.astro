@@ -4,8 +4,18 @@ import Block from "../components/Block.astro";
 import _ from "../strings";
 ---
 <Block class="santi side-side" title="Proyectos">
-    <HistoricItem title="Score" link="https://score.scez.ar/">
+    <HistoricItem title="Score" link="https://score.cez.ar/">
         Base para crear contadores de puntos para juegos de mesa.
+    </HistoricItem>
+    <HistoricItem
+        /*date={_({ english: "March 2020 — present", spanish: "marzo 2020 — hoy" })}*/
+        title={_({ english: "PEON: E-commerce solution", spanish: "PEON: Solución de e-commerce" })}
+        link="https://elbarquito.ar"
+    >
+        {_({
+            english: "Developed for a client",
+            spanish: "Desarrollado en base a la necesidades del cliente"
+        })}
     </HistoricItem>
     <HistoricItem
         title={_({ english: "KDE Plasma 5.16 Wallpaper Contest Winner", spanish: "Fondo por defecto para KDE 5.16" })}
@@ -21,5 +31,8 @@ import _ from "../strings";
     </HistoricItem>
     <HistoricItem title="Gengir" link="https://ahi.ar/gengir">
         Genera pistas de autocompletado para trabajar con GTK en Python.
+    </HistoricItem>
+    <HistoricItem title="Snake" link="https://ahi.ar/snake">
+        El juego de la viborita para arduino y a control remoto
     </HistoricItem>
 </Block>
