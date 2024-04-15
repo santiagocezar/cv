@@ -10,7 +10,7 @@ cd dist
 
 ZIP=$(mktemp -u)-deploy.zip
 
-zip -r1 "$ZIP" .
+7z a "$ZIP" .
 
 read -r JOB_ID ZIP_URL < <(
     aws amplify create-deployment --app-id "$APPID" --branch-name "$BRANCH" |
