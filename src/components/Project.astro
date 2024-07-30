@@ -1,0 +1,40 @@
+---
+export interface Props {
+    link: string;
+}
+
+function displayLink(link: string) {
+    if (link.startsWith("tel:")) {
+        link = link.split(":", 2)[1];
+        // TODO: format phone numbers
+        return link;
+    }
+    if (link.match(/^https?:\/\//)) return link.split("//", 2)[1];
+}
+
+const {link} = Astro.props;
+---
+
+<div>
+    <slot />
+    <a href={link} class="">{displayLink(link)}</a>
+</div>
+
+<style>
+div {
+    display: grid;
+    grid-column: span 2;
+    grid-template-columns: subgrid;
+    padding: 2mm 0;
+}
+div:not(:first-child) {
+    border-top: .5mm dashed var(--c2)
+}
+div :global(h2), div :global(a) {
+    text-align: right;
+}
+div :global(p) {
+    grid-row: span 2;
+}
+
+</style>

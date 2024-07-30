@@ -9,17 +9,27 @@
     font-size: 4mm;
     line-height: 1.25;
     font-weight: 400;
-
+    
+    --pink1: #fceeed;
+    --pink2: #ffbec9;
+    --pink3: #ff4294;
+    --pink4: #9e0884;
+    
+    --blue1: #dbf9ff;
+    --blue2: #94d7ea;
+    --blue3: #4183fb;
+    --blue4: #502490;
+/*
     --pink1: #f9eefc;
     --pink2: #fba5d7;
     --pink3: #ff4294;
     --pink4: #751d2c;
-
+    
     --blue1: #dbf9ff;
     --blue2: #7ccafb;
     --blue3: #1d7dff;
     --blue4: #27329d;
-
+    */
     --text: #161027;
 
     --bg: #fff;
@@ -61,6 +71,19 @@ hr {
 
 a {
     color: var(--c3)
+}
+
+.text {
+    h1, h2, h3, h4, h5, h6 {
+        &:not(:first-child) {
+            margin-top: .1em;
+        }
+    }
+    p {
+        &:not(:first-child) {
+            margin-top: .5em;
+        }
+    }
 }
 
 @media (prefers-color-scheme: dark) {

@@ -1,70 +1,34 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 :root {
     font-family: Barlow;
-    font-size: 4mm;
+    font-size: 0.4cm;
     line-height: 1.25;
     font-weight: 400;
 
-    --pink1: #f9eefc;
-    --pink2: #fba5d7;
-    --pink3: #ff4294;
-    --pink4: #751d2c;
-
-    --blue1: #dbf9ff;
-    --blue2: #7ccafb;
-    --blue3: #1d7dff;
-    --blue4: #27329d;
+    --s: #f9dbfb;
+    --sa: #fba5d7;
+    --san: #ff4294ff;
+    --v: #dbf9ff;
+    --va: #83ccf4;
+    --val: #0089e3ff;
 
     --text: #161027;
 
     --bg: #fff;
 
     color: var(--text);
-    background-color: #eee;
+    background-color: var(--bg);
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
 }
 
-.pink {
-    --c1: var(--pink1);
-    --c2: var(--pink2);
-    --c3: var(--pink3);
-    --c4: var(--pink4);
-}
-
-.blue {
-    --c1: var(--blue1);
-    --c2: var(--blue2);
-    --c3: var(--blue3);
-    --c4: var(--blue4);
-}
-
 h1, h2, h3, h4, h5, h6, .font-title {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-}
-
-h1 { font-size: 1.5em; }
-h2 { font-size: 1.2em; }
-
-hr {
-    border: none;
-    border-top: .5mm dashed var(--c2);
-    margin: 2mm 0;
-}
-
-a {
-    color: var(--c3)
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
 }
 
 @media (prefers-color-scheme: dark) {
-/*    :root {
+    :root {
         --s: #440831;
         --sa: #ff4294ff;
         --san: #ff60b2ff;
@@ -75,7 +39,39 @@ a {
         --text: #eaeafd;
 
         --bg: #161027;
-    }*/
+    }
+}
+
+.santi {
+    --c: var(--s);
+    --ce: var(--sa);
+    --cez: var(--san);
+}
+
+.valen {
+    --c: var(--v);
+    --ce: var(--va);
+    --cez: var(--val);
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    gap: 5mm;
+    padding: 5mm;
+    max-width: 210mm;
+    height: 297mm;
+    margin: 0 auto;
+}
+
+@media not print {
+    .on-print {
+        display: none;
+    }
+
+    .page:not(:first-child) {
+        margin-top: -5mm;
+    }
 }
 
 @media print {
@@ -84,7 +80,7 @@ a {
     }
 }
 
-/*
+
 .page .row {
     display: flex;
     gap: 5mm;
@@ -178,4 +174,9 @@ ul li::before {
     width: 5mm;
     margin-left: -5mm;
 }
-*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

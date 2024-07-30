@@ -1,0 +1,60 @@
+---
+import Date from '../components/Date.astro'
+import Project from '../components/Project.astro'
+import Icon from '../components/Icon.astro'
+
+const { lang, name } = Astro.props
+
+const components = {
+    icon: Icon,
+    date: Date,
+    project: Project,
+}
+
+const { Content, frontmatter } = await import(`./${lang}/${name}.mdx`)
+---
+
+<div class={"section " + (frontmatter.class ?? "")}>
+    {frontmatter.title && <h1>{frontmatter.title}</h1>}
+    <div class="section-body">
+        <Content components={components} />
+    </div>
+</div>
+
+<style>
+h1 {
+    padding: 1mm 4mm;
+    border-bottom: .5mm solid var(--c3);
+    color: white;
+    font-weight: 900;
+    border-radius: 1.5mm 1.5mm 0 0;
+    background-color: var(--c2);
+    text-shadow: .5mm .5mm var(--c3);
+}
+.section {
+    background-color: var(--c1);
+    border-radius: 2mm;
+    border: 0.5mm solid var(--c3);
+    box-shadow: .5mm .5mm var(--c3);
+}
+.section-body {
+    padding: 2mm 4mm;
+}
+.text .section-body {
+    padding: 4mm;
+}
+:global(strong) {
+    color: var(--c3);
+}
+
+.columns .section-body {
+    display: grid;
+    gap: 0 3mm;
+    grid-template-columns: auto 1fr;
+}
+
+.intro :global(h1) {
+    font-size: 2rem;
+    font-weight: 900;
+}
+</style>

@@ -1,77 +1,87 @@
 ---
-import Sidebar from "../components/Sidebar.astro";
-import Experience from "../parts/Experience.astro";
-import Contrib from "../parts/Contrib.astro";
-import Projects from "../parts/Projects.astro";
-import Tech from "../parts/Tech.astro";
-import English from "../parts/English.astro";
-import SoftSkills from "../parts/SoftSkills.astro";
-import { OpenSource } from "../parts/OpenSource";
-import { Block } from "../components/Block";
-import { References } from "../parts/References";
-import {Root} from "../main.tsx"
+import Section from '../sections/Section.astro'
 
-import "../css/cssreset.css";
-import "../css/index.css";
-import "uno.css";
+import "../css/index.less";
 ---
 
-<html lang="en">
+
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Curriculum</title>
-  <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com"
+crossorigin="anonymous" />
   <link
-    href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&family=Poppins:wght@300;400;700;900&display=swap"
-    rel="stylesheet" /> -->
+
+href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&family=
+Montserrat:wght@300;400;700;900&display=swap"
+    rel="stylesheet" />
 
 </head>
 
 <body>
     <div class="page">
-        <Sidebar>
-            <main>
-                <Projects />
-                <div class="dual">
-                    <Tech />
-                    <SoftSkills />
-                    <English />
-                </div>
-
-                <Contrib />
-                <!--<Experience />-->
-            </main>
-            <!--<div class="row">
-                <div class="flex flex-col flex-basis-0 grow-4 gap-5mm">
-                    <Social />
-                    {/* <Block class="santi bg-$text adwaita font-bold text-white">
-                        5+ years of experience in Linux-based OS
-                    </Block> */}
-                </div>
-                <div class="flex flex-col flex-basis-0 grow-4 gap-5mm">
-                </div>
-            </div>-->
-        </Sidebar>
+        <div class="column">
+            <img class="pic"
+                src="/santi4.jpg"
+                alt="Selfie de Santiago Cézar frente a un campo de
+                     paneles solares entre sierras."
+            />
+            <Section lang="es" name="intro" />
+            <Section lang="es" name="education" />
+        </div>
+        <div class="column">
+            <Section lang="es" name="experience" />
+            <Section lang="es" name="projects" />
+        </div>
     </div>
 </body>
 
 </html>
 
 <style>
-main {
+.page {
+    display: flex;
+    flex-direction: row;
+    gap: 3mm;
+    padding: 5mm;
+    max-width: 210mm;
+    height: 297mm;
+    background-color: var(--bg);
+}
+
+.column {
     display: flex;
     flex-direction: column;
-    gap: 5mm;
+    gap: 3mm;
 }
-.dual {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5mm;
+
+.column:first-child {
+    min-width: 8cm;
 }
-.dual :global(:first-child) {
-    grid-row: span 2;
+
+.pic {
+    border-radius: 3mm;
+    aspect-ratio: 1 / 1;
+    width: 100%;
 }
+
+@media not print {
+    .on-print {
+        display: none;
+    }
+    .page {
+        box-shadow: 0 8px 16px #0004;
+        margin: 16px auto;
+    }
+
+    .page:not(:first-child) {
+        margin-top: -5mm;
+    }
+}
+
 </style>
+
