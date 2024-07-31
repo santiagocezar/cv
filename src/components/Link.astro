@@ -1,0 +1,8 @@
+---
+export interface Props {
+    to: string;
+}
+const {to: url} = Astro.props;
+const display = url.split(/:(\/\/)?/, 3)[2]
+---
+<a href={url} class="">{display}</a>

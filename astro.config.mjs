@@ -1,6 +1,4 @@
 import { defineConfig } from 'astro/config';
-import unocssPlugin from '@unocss/vite';
-import react from '@astrojs/react';
 import mdx from '@astrojs/mdx';
 import remarkDirective from 'remark-directive';
 import { visit } from 'unist-util-visit'
@@ -26,11 +24,8 @@ function knownDirectives() {
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), mdx()],
+  integrations: [mdx()],
   markdown: {
     remarkPlugins: [remarkDirective, knownDirectives],
-  },
-  vite: {
-    plugins: [unocssPlugin()]
   }
 });

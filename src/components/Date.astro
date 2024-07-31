@@ -1,18 +1,7 @@
----
----
-
-<div>
-    <slot/>
-</div>
+<span><slot/></span>
 
 <style>
-div {
-    padding: 2mm 0;
-}
-div:not(:first-child) {
-    border-top: .5mm dashed var(--c2)
-}
-div :global(p:first-child) {
+span {
     color: var(--c3)
 }
 </style>

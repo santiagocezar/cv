@@ -2,11 +2,13 @@
 import Date from '../components/Date.astro'
 import Project from '../components/Project.astro'
 import Icon from '../components/Icon.astro'
+import Link from '../components/Link.astro'
 
 const { lang, name } = Astro.props
 
 const components = {
     icon: Icon,
+    link: Link,
     date: Date,
     project: Project,
 }
@@ -38,10 +40,7 @@ h1 {
     box-shadow: .5mm .5mm var(--c3);
 }
 .section-body {
-    padding: 2mm 4mm;
-}
-.text .section-body {
-    padding: 4mm;
+    padding: 3mm 4mm;
 }
 :global(strong) {
     color: var(--c3);
@@ -54,7 +53,10 @@ h1 {
 }
 
 .intro :global(h1) {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 900;
+}
+.intro {
+    text-wrap: balance;
 }
 </style>

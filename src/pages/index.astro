@@ -1,6 +1,7 @@
 ---
 import Section from '../sections/Section.astro'
 
+import "../css/reset.css";
 import "../css/index.less";
 ---
 
@@ -23,8 +24,8 @@ Montserrat:wght@300;400;700;900&display=swap"
 </head>
 
 <body>
-    <div class="page">
-        <div class="column">
+    <div class="page two-col">
+        <div class="col">
             <img class="pic"
                 src="/santi4.jpg"
                 alt="Selfie de Santiago Cézar frente a un campo de
@@ -33,9 +34,15 @@ Montserrat:wght@300;400;700;900&display=swap"
             <Section lang="es" name="intro" />
             <Section lang="es" name="education" />
         </div>
-        <div class="column">
+        <div class="col">
             <Section lang="es" name="experience" />
-            <Section lang="es" name="projects" />
+            <div class="two-col">
+                <Section lang="es" name="projects" />
+                <div class="col">
+                    <Section lang="es" name="character" />
+                    <Section lang="es" name="english" />
+                </div>
+            </div>
         </div>
     </div>
 </body>
@@ -44,23 +51,26 @@ Montserrat:wght@300;400;700;900&display=swap"
 
 <style>
 .page {
-    display: flex;
-    flex-direction: row;
-    gap: 3mm;
     padding: 5mm;
     max-width: 210mm;
     height: 297mm;
     background-color: var(--bg);
 }
 
-.column {
-    display: flex;
-    flex-direction: column;
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 3mm;
 }
 
-.column:first-child {
-    min-width: 8cm;
+.two-col.page {
+    grid-template-columns: 7cm 1fr;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    gap: 3mm;
 }
 
 .pic {
