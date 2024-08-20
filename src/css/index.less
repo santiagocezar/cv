@@ -5,7 +5,10 @@
 }
 
 :root {
-    font-family: Barlow;
+    --body-font: Barlow;
+    --title-font: Montserrat;
+
+    font-family: var(--body-font);
     font-size: 4mm;
     line-height: 1.25;
     font-weight: 400;
@@ -46,7 +49,7 @@
 }
 
 h1, h2, h3, h4, h5, h6, .font-title {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--title-font);
     font-weight: 600;
 }
 

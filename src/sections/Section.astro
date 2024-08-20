@@ -3,12 +3,14 @@ import Date from '../components/Date.astro'
 import Project from '../components/Project.astro'
 import Icon from '../components/Icon.astro'
 import Link from '../components/Link.astro'
+import Level from '../components/Level.astro'
 
 const { lang, name } = Astro.props
 
 const components = {
     icon: Icon,
     link: Link,
+    level: Level,
     date: Date,
     project: Project,
 }
@@ -17,7 +19,10 @@ const { Content, frontmatter } = await import(`./${lang}/${name}.mdx`)
 ---
 
 <div class={"section " + (frontmatter.class ?? "")}>
-    {frontmatter.title && <h1>{frontmatter.title}</h1>}
+    {frontmatter.title && <h1>
+        <span class="title">{frontmatter.title}</span>
+        <span class="close">×</span>
+    </h1>}
     <div class="section-body">
         <Content components={components} />
     </div>
@@ -25,13 +30,26 @@ const { Content, frontmatter } = await import(`./${lang}/${name}.mdx`)
 
 <style>
 h1 {
-    padding: 1mm 4mm;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1mm 1mm 1mm 4mm;
     border-bottom: .5mm solid var(--c3);
-    color: white;
-    font-weight: 900;
     border-radius: 1.5mm 1.5mm 0 0;
     background-color: var(--c2);
+}
+.title {
+    color: white;
+    font-weight: 900;
     text-shadow: .5mm .5mm var(--c3);
+}
+.close {
+    user-select: none;
+    font-size: 2em;
+    line-height: .5;
+    font-weight: 100;
+    color: var(--c3);
+    border-radius: .1em;
 }
 .section {
     background-color: var(--c1);
