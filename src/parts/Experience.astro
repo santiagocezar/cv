@@ -3,7 +3,7 @@ import HistoricItem from "../components/HistoricItem.astro";
 import Block from "../components/Block.astro";
 import _ from "../strings";
 ---
-<Block class="valen side-side" title="Experiencia">
+<Block class="valen side-side" title="Experiencia laboral">
 <!--<HistoricItem
     date={_({ english: "March 2020 — present", spanish: "marzo 2020 — hoy" })}
     title={_({ english: "PEON: E-commerce solution", spanish: "PEON: Solución de e-commerce" })}
@@ -15,13 +15,10 @@ import _ from "../strings";
     })}
 </HistoricItem>-->
 <HistoricItem
-    date={_({ english: "May 2023 — present", spanish: "mayo 2023 — hoy" })}
-    title={_({ english: "Retail", spanish: "Venta al público" })}
+    date="2023 · hoy"
+    title="Venta al público"
 >
-    {_({
-        english: "Developed for a client",
-        spanish: 'Atención al cliente en "El Barquito", venta de artículos de librería'
-    })}
+    Atención al cliente en "El Barquito", venta de artículos de librería
 </HistoricItem>
 <!--<p className="text-4mm">
     {_({

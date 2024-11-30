@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@astrojs/mdx": "^2.3.1",
     "@astrojs/react": "^3.0.9",
     "@unocss/vite": "^0.58.2",
     "astro": "^4.0.8",

@@ -175,6 +175,11 @@ ul li::before {
     margin-left: -5mm;
 }
 
+.date {
+    color: var(--cez);
+    font-weight: bold;
+}
+
 * {
     margin: 0;
     padding: 0;
