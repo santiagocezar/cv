@@ -18,7 +18,7 @@ const components = {
 const { Content, frontmatter } = await import(`./${lang}/${name}.mdx`)
 ---
 
-<div class={"section " + (frontmatter.class ?? "")}>
+<div class={"section " + (frontmatter.class ?? "")} data-name={name}>
     {frontmatter.title && <h1 class="titlebar">
         <span class="title">{frontmatter.title}</span>
         <span class="close">×</span>
